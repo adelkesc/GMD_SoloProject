@@ -28,9 +28,10 @@ public class GroundMainController : MonoBehaviour
 
     public void RecycleGround(GameObject ground)
     {
-        Debug.Log("zoffset Method call in recycle ground");
+        Debug.Log("RecycleGround - zoffset received call from GroundCheck");
         ground.transform.position = new Vector3(0, 0, zOffset);
         Debug.Log("RecycleGround - adding to zOffset in Method");
         zOffset += 50;
+        Debug.Log("RecycleGround zoffset = " + zOffset);
     }
 }

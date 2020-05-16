@@ -6,11 +6,25 @@ using UnityEngine.Audio;
 
 public class AudioManagerMain : MonoBehaviour
 {
+    //consider making the audio manager a prefab
     public SoundMain[] sounds;
+    public static AudioManagerMain instance;
 
     // Awake is called before Start
     private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
+
         foreach (SoundMain singleSound in sounds)
         { 
             singleSound.source = gameObject.AddComponent<AudioSource>();
