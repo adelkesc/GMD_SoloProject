@@ -11,7 +11,7 @@ public class GroundCheckMain : MonoBehaviour
     private Camera mainCam;
     Plane[] planes;
 
-    //private IEnumerator co;
+    private bool groundRecycled;
 
     private void Start()
     {
@@ -30,20 +30,22 @@ public class GroundCheckMain : MonoBehaviour
         if (GeometryUtility.TestPlanesAABB(planes, groundCollider.bounds))
         {
             Debug.Log("Ground Detected:" + groundObject.name);
+            groundRecycled = false;
             //do nothing
         }
-        else
+        else if(!groundRecycled)
         {
             Debug.Log("Ground Not Detected:" + groundObject.name);
-            
             Debug.Log("Method call to zoffset recycle ground.");
-            //groundController.RecycleGround(this.gameObject);
+            groundController.RecycleGround(this.gameObject);
+            groundRecycled = true;
             
-            StartCoroutine(CallToGenerate());
-            StopCoroutine(CallToGenerate());
+            //StartCoroutine(CallToGenerate());
+            //StopCoroutine(CallToGenerate());
         }
         
     }
+    /*
     IEnumerator CallToGenerate()
     {
 
@@ -54,7 +56,7 @@ public class GroundCheckMain : MonoBehaviour
     //OnBecameInvisible is posing too much of a problem.
     //distance between ground and player
     //collision or onTriggerEnter
-    /*
+    
     private void OnBecameInvisible()
     {
         //Use something in Update to fix this method so the ground can respawn as it should
