@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CoinController : MonoBehaviour
 {
+    public GameObject coin;
     ParticleSystem coinParticle;
 
     // Start is called before the first frame update
@@ -24,6 +25,10 @@ public class CoinController : MonoBehaviour
         {
             //particle system
             coinParticle.Play();
+            CoinScore.coinScore += 1;
+            Debug.Log("coinScoring!");
+            //coin.SetActive(false);
         }
+
     }
 }

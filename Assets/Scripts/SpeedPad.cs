@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class SpeedPad : MonoBehaviour
 {
-    //public PlayerMovementMain playerSpeed;
     public float speedBoost;
-    public PlayerMovementMain playerScript;
+    private PlayerMovementMain playerScript;
     public GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        //gives access to the script
+        //find the game object and give access to the script
         player = GameObject.FindGameObjectWithTag("Player");
         playerScript = player.GetComponent<PlayerMovementMain>();
     }

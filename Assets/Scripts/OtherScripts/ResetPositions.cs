@@ -26,6 +26,7 @@ public class ResetPositions : MonoBehaviour
             child.position = new Vector3(child.position.x, child.position.y, child.position.z - 100);
         }
         //offsetCheck.zOffset = -100;
+        //offsetCheck.zOffset = 150;
     }
     */
 }
