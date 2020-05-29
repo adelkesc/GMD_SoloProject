@@ -8,12 +8,6 @@ public class CoinScore : MonoBehaviour
     public TextMeshProUGUI collectedText;
     public static int coinScore;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

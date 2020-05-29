@@ -13,6 +13,15 @@ public class CoinController : MonoBehaviour
         coinParticle = GetComponentInChildren<ParticleSystem>();
     }
 
+    private void OnEnable()
+    {
+        PlayerStatus.StatusUpdate += CoinAction;
+    }
+    private void OnDisable()
+    {
+        PlayerStatus.StatusUpdate -= CoinAction;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -23,12 +32,17 @@ public class CoinController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            //particle system
-            coinParticle.Play();
-            CoinScore.coinScore += 1;
-            Debug.Log("coinScoring!");
-            //coin.SetActive(false);
+            CoinAction();
         }
 
+    }
+
+    void CoinAction()
+    {
+        //particle system
+        coinParticle.Play();
+        CoinScore.coinScore += 1;
+        Debug.Log("coinScoring!");
+        //coin.SetActive(false);
     }
 }

@@ -16,22 +16,27 @@ public class SpeedPad : MonoBehaviour
         playerScript = player.GetComponent<PlayerMovementMain>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //Prefabs can't reference scene objects.  I need a workaround.
+            //Prefabs can't reference scene objects.  
 
             speedBoost = playerScript.physicsSpeed * 2;
             player.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, speedBoost), ForceMode.Impulse);
 
             Debug.Log("Boost:" + speedBoost);
+            //SpeedBoost();
         }
     }
+
+    /*
+    void SpeedBoost()
+    {
+            speedBoost = playerScript.physicsSpeed * 2;
+            player.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, speedBoost), ForceMode.Impulse);
+
+            Debug.Log("Boost:" + speedBoost);
+    }
+     */
 }
