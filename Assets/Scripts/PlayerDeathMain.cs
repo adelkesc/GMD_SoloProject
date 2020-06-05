@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerDeathMain : MonoBehaviour
 {
-    private PlayerMovementMain playerScript;  //Try using this variable in place of player
+    //private PlayerMovementMain playerScript;  //Try using this variable in place of player
     private PlayerEffects effects;
 
     private float deathZone;
@@ -24,9 +24,15 @@ public class PlayerDeathMain : MonoBehaviour
         currentPosition = player.transform.position.y;
         if (currentPosition <= deathZone)
         {
-            effects.PlayerDeathEffect();
-            player.SetActive(false);
-            GameOverMenu.isDead = true;
+            FallDeath();
         }
+    }
+
+    void FallDeath()
+    {
+        effects.PlayerDeathEffect();
+        AudioManagerMain.instance.Play("PlayerDeath");
+        player.SetActive(false);
+        GameOverMenu.isDead = true;
     }
 }

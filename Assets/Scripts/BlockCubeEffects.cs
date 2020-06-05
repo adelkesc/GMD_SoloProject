@@ -10,5 +10,6 @@ public class BlockCubeEffects : MonoBehaviour
     public void onContact()
     {
         Instantiate(hitParticle, blockCube.transform.position, Quaternion.identity);
+        AudioManagerMain.instance.Play("PatrolHit");
     }
 }

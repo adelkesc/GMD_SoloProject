@@ -25,7 +25,6 @@ public class CoinController : MonoBehaviour
         {
             coinFX.OnCoinCollect();
             CoinScore.coinScore += 1;
-            Debug.Log("coinScoring!");
             //coin.SetActive(false);
         }
     }

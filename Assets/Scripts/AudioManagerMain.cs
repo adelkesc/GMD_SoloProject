@@ -50,10 +50,4 @@ public class AudioManagerMain : MonoBehaviour
     {
         Play("BackgroundMusic");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

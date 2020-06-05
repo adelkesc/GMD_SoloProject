@@ -17,5 +17,6 @@ public class CoinEffects : MonoBehaviour
     public void OnCoinCollect()
     {
         coinParticle.Play();
+        AudioManagerMain.instance.Play("CoinCollected");
     }
 }

@@ -10,5 +10,7 @@ public class CubeEffects : MonoBehaviour
     public void CubeCollectEffect()
     {
         //Instantiate(collectParticle, cube.transform.position, Quaternion.Euler(90, 0, 0));
+        //why does the particle effect instantiate on a random prefab instead of where the OnTrigger occured?
+        AudioManagerMain.instance.Play("CubeCollected");
     }
 }
