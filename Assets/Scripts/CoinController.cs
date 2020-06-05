@@ -5,21 +5,12 @@ using UnityEngine;
 public class CoinController : MonoBehaviour
 {
     public GameObject coin;
-    ParticleSystem coinParticle;
+    public CoinEffects coinFX;
+    //ParticleSystem coinParticle;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        coinParticle = GetComponentInChildren<ParticleSystem>();
-    }
-
-    private void OnEnable()
-    {
-        PlayerStatus.StatusUpdate += CoinAction;
-    }
-    private void OnDisable()
-    {
-        PlayerStatus.StatusUpdate -= CoinAction;
+        coinFX = GameObject.FindObjectOfType<CoinEffects>();
     }
 
     // Update is called once per frame
@@ -32,17 +23,10 @@ public class CoinController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            CoinAction();
+            coinFX.OnCoinCollect();
+            CoinScore.coinScore += 1;
+            Debug.Log("coinScoring!");
+            //coin.SetActive(false);
         }
-
-    }
-
-    void CoinAction()
-    {
-        //particle system
-        coinParticle.Play();
-        CoinScore.coinScore += 1;
-        Debug.Log("coinScoring!");
-        //coin.SetActive(false);
     }
 }

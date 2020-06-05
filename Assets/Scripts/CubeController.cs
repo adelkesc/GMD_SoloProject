@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class CubeController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private CubeEffects cubeEffect;
+
     void Start()
     {
-        
+        cubeEffect = GameObject.FindObjectOfType<CubeEffects>();
     }
-
     // Update is called once per frame
     void Update()
     {
         transform.Rotate(new Vector3(30, 0, 30) * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Collision");
+            cubeEffect.CubeCollectEffect();
+        }
     }
 }

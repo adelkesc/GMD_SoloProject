@@ -11,6 +11,8 @@ public class SpawnGround : MonoBehaviour
     private Camera mainCam;
     Plane[] planesCam;
 
+    private bool groundRecycled;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,34 +30,16 @@ public class SpawnGround : MonoBehaviour
         if (GeometryUtility.TestPlanesAABB(planesCam, groundPlane.bounds))
         {
             Debug.Log("Ground Detected:" + groundPlaneObject.name);
+            groundRecycled = false;
             //do nothing
         }
-        else
+        else if (!groundRecycled)
         {
             Debug.Log("Ground Not Detected:" + groundPlaneObject.name);
-
             Debug.Log("Method call to zoffset recycle ground.");
-            //groundController.RecycleGround(this.gameObject);
-
-            StartCoroutine(CallToGenerate());
-            StopCoroutine(CallToGenerate());
-        }
-    }
-    IEnumerator CallToGenerate()
-    {
-
-        Debug.Log("zoffset coroutine.");
-        groundManager.RecycleGround(this.gameObject);
-        yield return new WaitForSeconds(1.0f);
-    }
-    /*
-        private void OnBecameInvisible()
-        {
-            //Use something in Update to fix this method so the ground can respawn as it should
-            //The dependency on camera rendering is too much trouble
-            Debug.Log("GroundManager.OnBecameInvisible");
             groundManager.RecycleGround(this.gameObject);
+            groundRecycled = true;
         }
-    */
+    }
 
 }

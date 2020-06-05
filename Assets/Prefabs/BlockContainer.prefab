@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7327925306557108750}
   - component: {fileID: 7327925306557108737}
   - component: {fileID: 6672091092939051583}
+  - component: {fileID: 5998859451727407442}
   m_Layer: 0
   m_Name: BlockCube
   m_TagString: Untagged
@@ -144,6 +145,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockForce: 3
+--- !u!114 &5998859451727407442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7327925306557108736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: effcf152fa8edc24f859e33116bfe022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitParticle: {fileID: 19800000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
+  blockCube: {fileID: 7327925306557108736}
 --- !u!1 &7327925306840329902
 GameObject:
   m_ObjectHideFlags: 0

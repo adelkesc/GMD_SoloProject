@@ -35,7 +35,6 @@ public class KillzoneMain : MonoBehaviour
     }
     IEnumerator PauseForPlayer()
     {
-        Debug.Log("PAUSE");
         yield return new WaitForSeconds(50f);
     }
 }

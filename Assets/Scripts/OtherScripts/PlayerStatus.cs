@@ -6,7 +6,7 @@ public class PlayerStatus : MonoBehaviour
 {
     public delegate void PlayerEvent();
     public static event PlayerEvent StatusUpdate;
-
+    /*
     public static void OnPlayerChange()
     {
         if (StatusUpdate != null)
@@ -14,4 +14,5 @@ public class PlayerStatus : MonoBehaviour
             StatusUpdate();
         }
     }
+    */
 }

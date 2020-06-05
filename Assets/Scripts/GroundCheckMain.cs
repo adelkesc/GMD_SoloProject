@@ -5,13 +5,14 @@ using UnityEngine;
 public class GroundCheckMain : MonoBehaviour
 {
     private GroundMainController groundController;
+    private PickupSpawner spawner;
 
     public GameObject groundObject;
     private Collider groundCollider;
     private Camera mainCam;
     Plane[] planes;
 
-    private bool groundRecycled;
+    public bool groundRecycled; //used to be private
 
     private void Start()
     {
@@ -21,11 +22,11 @@ public class GroundCheckMain : MonoBehaviour
     private void OnEnable()
     {
         groundController = GameObject.FindObjectOfType<GroundMainController>();
+        spawner = GameObject.FindObjectOfType<PickupSpawner>();
     }
     
     private void Update()
     {
-        //This entire if statement is being double called!
         planes = GeometryUtility.CalculateFrustumPlanes(mainCam);
         if (GeometryUtility.TestPlanesAABB(planes, groundCollider.bounds))
         {
@@ -39,44 +40,9 @@ public class GroundCheckMain : MonoBehaviour
             Debug.Log("Method call to zoffset recycle ground.");
             groundController.RecycleGround(this.gameObject);
             groundRecycled = true;
-            
-            //StartCoroutine(CallToGenerate());
-            //StopCoroutine(CallToGenerate());
+
+            spawner.RecycleSpawn();
         }
         
     }
-    /*
-    IEnumerator CallToGenerate()
-    {
-
-        Debug.Log("zoffset coroutine.");
-        groundController.RecycleGround(this.gameObject);
-        yield return new WaitForSeconds(1.0f);
-    }
-    //OnBecameInvisible is posing too much of a problem.
-    //distance between ground and player
-    //collision or onTriggerEnter
-    
-    private void OnBecameInvisible()
-    {
-        //Use something in Update to fix this method so the ground can respawn as it should
-        //The dependency on camera rendering is too much trouble
-        //Debug.Log("GroundCheckMain.OnBecameInvisible");
-        groundController.RecycleGround(this.gameObject);
-    }
-        
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            onCollision = true;
-        }
-        else
-        {
-            onCollision = false;
-        }
-     
-    }
-    */
 }

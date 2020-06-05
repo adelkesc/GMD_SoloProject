@@ -18,8 +18,8 @@ public class GroundManager : MonoBehaviour
     {
         for (int i = 0; i < groundArray.Length; i++)
         {
-            Instantiate(groundArray[i], new Vector3(0, 0, i * 50), Quaternion.identity);
-            zOffset += 50;
+            Instantiate(groundArray[i], new Vector3(0, 0, i * 100), Quaternion.identity);
+            zOffset += 100;
         }
     }
 
@@ -27,6 +27,6 @@ public class GroundManager : MonoBehaviour
     {
         ground.transform.position = new Vector3(0, 0, zOffset);
         Debug.Log("Increment");
-        zOffset += 50;
+        zOffset += 100;
     }
 }

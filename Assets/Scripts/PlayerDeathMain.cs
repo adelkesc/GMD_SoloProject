@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerDeathMain : MonoBehaviour
 {
     private PlayerMovementMain playerScript;  //Try using this variable in place of player
+    private PlayerEffects effects;
+
     private float deathZone;
     private float currentPosition;
     public GameObject player;
@@ -13,6 +15,7 @@ public class PlayerDeathMain : MonoBehaviour
     void Start()
     {
         deathZone = transform.position.y - 5;
+        effects = GameObject.FindObjectOfType<PlayerEffects>();
     }
 
     // Update is called once per frame
@@ -21,6 +24,7 @@ public class PlayerDeathMain : MonoBehaviour
         currentPosition = player.transform.position.y;
         if (currentPosition <= deathZone)
         {
+            effects.PlayerDeathEffect();
             player.SetActive(false);
             GameOverMenu.isDead = true;
         }

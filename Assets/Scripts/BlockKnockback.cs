@@ -8,6 +8,13 @@ public class BlockKnockback : MonoBehaviour //IInteractable
     private GameObject player;
     private Rigidbody playerRB;
 
+    private BlockCubeEffects blockEffects;
+
+    private void Awake()
+    {
+        blockEffects = GameObject.FindObjectOfType<BlockCubeEffects>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +26,7 @@ public class BlockKnockback : MonoBehaviour //IInteractable
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            blockEffects.onContact();
             playerRB.AddForce(playerRB.velocity * -knockForce, ForceMode.Impulse);
         }
     }
