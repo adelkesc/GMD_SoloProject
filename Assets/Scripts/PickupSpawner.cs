@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class PickupSpawner : MonoBehaviour
 {
     public GameObject[] spawnObjects;
+    public List<GameObject> spawned;
     //private GroundCheckMain groundCheck;
     [SerializeField]
     private int zSpawnOffset;
@@ -14,6 +16,7 @@ public class PickupSpawner : MonoBehaviour
     private void Awake()
     {
         spawnObjects = Resources.LoadAll<GameObject>("SpawnPrefabs");
+        spawned = new List<GameObject>();
         
     }
     private void OnEnable()
@@ -37,11 +40,17 @@ public class PickupSpawner : MonoBehaviour
         for(int i = 0; i < 15; i++)
         {
             //try object array = Instantiate... but create the array first.
-            Instantiate(spawnObjects[Random.Range(0, spawnObjects.Length)], 
+            GameObject collectable = Instantiate(spawnObjects[Random.Range(0, spawnObjects.Length)], 
              new Vector3(Random.Range(-10.0f, 10.0f), 1, Random.Range(-20.0f, 120.0f)), Quaternion.identity);
             zSpawnOffset = 120;
             noSpawnOffset = 70;
-        } 
+
+            spawned.Add(collectable);
+        }
+        foreach(GameObject so in spawned)
+        {
+            Debug.Log(so + " is in the array at: " + so.GetInstanceID());
+        }
     }
 
     public void RecycleSpawn()

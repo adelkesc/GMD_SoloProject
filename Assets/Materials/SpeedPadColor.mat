@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: StatusCube
+  m_Name: SpeedPadColor
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
@@ -73,5 +73,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.47425044, g: 0.25907797, b: 0.7735849, a: 1}
-    - _EmissionColor: {r: 0.36603177, g: 0.10537278, b: 1.0592737, a: 1}
+    - _Color: {r: 0.40161088, g: 0.89622617, b: 0.8962264, a: 1}
+    - _EmissionColor: {r: 0.26666668, g: 1.4980392, b: 1.4980392, a: 1}
