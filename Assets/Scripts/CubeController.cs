@@ -5,10 +5,12 @@ using UnityEngine;
 public class CubeController : MonoBehaviour
 {
     private CubeEffects cubeEffect;
+    private PickupSpawner spawner;
 
     void Start()
     {
         cubeEffect = GameObject.FindObjectOfType<CubeEffects>();
+        spawner = GameObject.FindObjectOfType<PickupSpawner>();
     }
     // Update is called once per frame
     void Update()
@@ -20,8 +22,10 @@ public class CubeController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Collision");
             cubeEffect.CubeCollectEffect();
+            Debug.Log("Call To Remove");
+            //spawner.RemoveObject(gameObject);
+            Destroy(gameObject);
         }
     }
 }

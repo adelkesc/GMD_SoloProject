@@ -6,7 +6,6 @@ using UnityEngine.Audio;
 
 public class AudioManagerMain : MonoBehaviour
 {
-    //consider making the audio manager a prefab
     public SoundMain[] sounds;
     public static AudioManagerMain instance;
 
@@ -33,7 +32,6 @@ public class AudioManagerMain : MonoBehaviour
             singleSound.source.loop = singleSound.loop;
         }
     }
-
     public void Play(string name)
     {
         SoundMain s = Array.Find(sounds, sound => sound.name == name);
@@ -44,7 +42,6 @@ public class AudioManagerMain : MonoBehaviour
         }
         s.source.Play();
     }
-
     // Start is called before the first frame update
     void Start()
     {
