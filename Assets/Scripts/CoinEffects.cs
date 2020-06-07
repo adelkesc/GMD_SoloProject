@@ -11,7 +11,7 @@ public class CoinEffects : MonoBehaviour
     void Start()
     {
         coinParticle = GetComponentInChildren<ParticleSystem>();
-        Instantiate(coinGlitter, coin.transform.position, Quaternion.identity);
+        Instantiate(coinGlitter, coin.transform.position, Quaternion.identity, transform.parent);
     }
 
     public void OnCoinCollect()

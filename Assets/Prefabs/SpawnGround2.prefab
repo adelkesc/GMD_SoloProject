@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7314143070484847219}
   - component: {fileID: 7314143070484847218}
   - component: {fileID: 787368175166896783}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnGround2
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -124,6 +124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedPad1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6020503475656602434, guid: 6bf90046026df1c4983580e35889db7c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6020503475656602435, guid: 6bf90046026df1c4983580e35889db7c,
         type: 3}
@@ -300,10 +305,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7314143070484847221}
     m_Modifications:
+    - target: {fileID: 7327925306557108736, guid: 49751c0ff1bd0744788b881629e38ae4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7327925306840329902, guid: 49751c0ff1bd0744788b881629e38ae4,
         type: 3}
       propertyPath: m_Name
       value: BlockContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327925306840329902, guid: 49751c0ff1bd0744788b881629e38ae4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7327925306840329903, guid: 49751c0ff1bd0744788b881629e38ae4,
         type: 3}
