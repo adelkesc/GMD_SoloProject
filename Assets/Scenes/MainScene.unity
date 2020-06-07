@@ -553,8 +553,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnObjects: []
+  spawned: []
   zSpawnOffset: 0
   noSpawnOffset: 0
+  collectable: {fileID: 0}
 --- !u!1 &437369030
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +644,7 @@ GameObject:
   - component: {fileID: 572190289}
   - component: {fileID: 572190291}
   - component: {fileID: 572190290}
+  - component: {fileID: 572190292}
   m_Layer: 5
   m_Name: PlayerStatus
   m_TagString: Untagged
@@ -665,7 +668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 355.40002, y: -68.47504}
+  m_AnchoredPosition: {x: 366, y: -90.475006}
   m_SizeDelta: {x: 588.1, y: 91.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &572190290
@@ -721,7 +724,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 514
+  m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -786,6 +789,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572190288}
   m_CullTransparentMesh: 0
+--- !u!114 &572190292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572190288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a832a7b0dd6ad2d49aac8c27f731e86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statusText: {fileID: 572190290}
 --- !u!1 &651195210
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,10 +857,12 @@ GameObject:
   - component: {fileID: 700918530}
   - component: {fileID: 700918529}
   - component: {fileID: 700918528}
+  - component: {fileID: 700918536}
   - component: {fileID: 700918533}
   - component: {fileID: 700918532}
   - component: {fileID: 700918534}
   - component: {fileID: 700918535}
+  - component: {fileID: 700918537}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -985,6 +1003,35 @@ MonoBehaviour:
   explodeParticle: {fileID: 198572881580852744, guid: 7e48ba6b1b968764490bbc70b66e3fe1,
     type: 3}
   player: {fileID: 700918527}
+--- !u!65 &700918536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700918527}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &700918537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700918527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f336289561a194044a6734d763c6496c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalSphere: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  cubed: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  sphereCollider: {fileID: 0}
+  boxCollider: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,8 +1202,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 273, y: -162}
-  m_SizeDelta: {x: 422.5, y: 95.1}
+  m_AnchoredPosition: {x: 327, y: -184}
+  m_SizeDelta: {x: 509.3, y: 95.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &730350769
 MonoBehaviour:
@@ -1211,7 +1258,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 514
+  m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -2076,7 +2123,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 316.4, y: -259}
+  m_AnchoredPosition: {x: 327, y: -281}
   m_SizeDelta: {x: 509.3, y: 95.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1071025516
@@ -2132,7 +2179,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 514
+  m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
