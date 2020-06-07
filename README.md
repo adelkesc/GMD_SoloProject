@@ -2,7 +2,7 @@
 A course assignment for a game development class.
 
 ## Sources and Tutorials Used
-Roll-a-Ball Player Movement: https://www.youtube.com/watch?v=7C7WWxUxPZE  Return
+Roll-a-Ball Player Movement: https://www.youtube.com/watch?v=7C7WWxUxPZE<br>
 Roll-a-Ball Camera Movement: https://www.youtube.com/watch?v=Xcm5H2J95iI
 Jump Tutorial: https://www.youtube.com/watch?v=xvLMD2qWaKk
 Platform Generation Tutorial: https://www.youtube.com/watch?v=WYD9iq8ku_w 
