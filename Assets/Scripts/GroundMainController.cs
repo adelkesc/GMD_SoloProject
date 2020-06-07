@@ -19,9 +19,9 @@ public class GroundMainController : MonoBehaviour
     {
         for (int i = 0; i < groundArray.Length; i++)
         {
-            Instantiate(groundArray[i], new Vector3(0, 0, i * 50), Quaternion.identity);
+            Instantiate(groundArray[i], new Vector3(0, 0, i * 100), Quaternion.identity);
             Debug.Log("GroundMainController - adding to zOffset in Method");
-            zOffset += 50;
+            zOffset += 100;
         }
     }
 
@@ -30,7 +30,7 @@ public class GroundMainController : MonoBehaviour
         Debug.Log("RecycleGround - zoffset received call from GroundCheck");
         ground.transform.position = new Vector3(0, 0, zOffset);
         Debug.Log("RecycleGround - adding to zOffset in Method");
-        zOffset += 50;
+        zOffset += 100;
         Debug.Log("RecycleGround zoffset = " + zOffset);
     }
 }

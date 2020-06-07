@@ -26,13 +26,13 @@ public class PickupSpawner : MonoBehaviour
     }
     void SpawnObjects()
     {
-        for(int i = 0; i < 15; i++)
+        for(int i = 0; i < 20; i++)
         {
-            //try object array = Instantiate... but create the array first.
+            //try object array = Instantiate... but create the array first. +20  -20 to 120 (120, 70)
             collectable = Instantiate(spawnObjects[Random.Range(0, spawnObjects.Length)], 
-             new Vector3(Random.Range(-10.0f, 10.0f), 1, Random.Range(-20.0f, 120.0f)), Quaternion.identity);
-            zSpawnOffset = 120;
-            noSpawnOffset = 70;
+             new Vector3(Random.Range(-10.0f, 10.0f), 1, Random.Range(-40.0f, 250.0f)), Quaternion.identity);
+            zSpawnOffset = 250;
+            noSpawnOffset = 150;
 
             spawned.Add(collectable);
             Debug.Log("Object Count: " + spawned.Count);
@@ -42,8 +42,8 @@ public class PickupSpawner : MonoBehaviour
     public void RecycleSpawn()
     {
         Debug.Log("Spawn More Objects.");
-        zSpawnOffset += 50;
-        noSpawnOffset += 50;
+        zSpawnOffset += 100;
+        noSpawnOffset += 100;
         Debug.Log("Spawn Object Location = " + zSpawnOffset);
         for (int i = 0; i < 10; i++)
         {
