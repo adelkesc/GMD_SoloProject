@@ -10,6 +10,8 @@ TagManager:
   - FlyWheel
   - Cube
   - Wall
+  - FxTemporaire
+  - Collected
   layers:
   - Default
   - TransparentFX

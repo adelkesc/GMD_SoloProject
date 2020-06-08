@@ -13,12 +13,13 @@ public class KillzoneMain : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        StartCoroutine(PauseForPlayer());
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(PauseForPlayer());
         //The plane is rotated so it uses the Y axis to move in the Z axis.
         killBoundary.transform.Translate(new Vector3(0, moveSpeed, 0) * Time.deltaTime);
     }

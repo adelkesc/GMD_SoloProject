@@ -6,14 +6,12 @@ public class CoinController : MonoBehaviour
 {
     public GameObject coin;
     public CoinEffects coinFX;
-    //ParticleSystem coinParticle;
+    public GameObject collectObject; //Problems with this
 
     private void Awake()
     {
         coinFX = GameObject.FindObjectOfType<CoinEffects>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         transform.Rotate(new Vector3(0, 0, 90) * Time.deltaTime);
@@ -25,7 +23,7 @@ public class CoinController : MonoBehaviour
         {
             coinFX.OnCoinCollect();
             CoinScore.coinScore += 1;
-            //coin.SetActive(false);
+            Destroy(collectObject);
         }
     }
 }

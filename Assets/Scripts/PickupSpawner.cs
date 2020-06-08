@@ -14,16 +14,44 @@ public class PickupSpawner : MonoBehaviour
     private int noSpawnOffset;
     public GameObject collectable;
 
+    /*
+    public GameObject deadObject;
+    private Collider objCollider;
+    private Camera cam;
+    Plane[] planes;
+    */
+
     private void Awake()
     {
         spawnObjects = Resources.LoadAll<GameObject>("SpawnPrefabs");
-        spawned = new List<GameObject>();
+        spawned = new List<GameObject>();  //put this in start
     }
     // Start is called before the first frame update
     void Start()
     {
         SpawnObjects();
+
+        //cam = Camera.main;
+        //objCollider = GetComponent<Collider>();
     }
+
+    /*
+    private void Update()
+    {
+        Cleanup(objCollider);
+    }
+    private void Cleanup(Collider objCol)
+    {
+        for (int i = 0; i < spawned.Count; i++)
+        {
+            if(objCol.gameObject == spawned[i].gameObject)
+            {
+                Debug.Log(objCol.gameObject.name);
+            }
+        }
+    }
+    */
+
     void SpawnObjects()
     {
         for(int i = 0; i < 20; i++)
@@ -34,8 +62,8 @@ public class PickupSpawner : MonoBehaviour
             zSpawnOffset = 250;
             noSpawnOffset = 150;
 
-            spawned.Add(collectable);
-            Debug.Log("Object Count: " + spawned.Count);
+            //spawned.Add(collectable);
+            //Debug.Log("Object Count: " + spawned.Count);
         }
     }
 
@@ -51,22 +79,22 @@ public class PickupSpawner : MonoBehaviour
              new Vector3(Random.Range(-10.0f, 10.0f), 1, Random.Range(noSpawnOffset, zSpawnOffset)),
              Quaternion.identity);
 
-            spawned.Add(collectable);
+            //spawned.Add(collectable);
         }
     }
 
     public void RemoveObject(GameObject pickup)
     {
-        //spawned.Remove(pickup);
         for(int i = 0; i < spawned.Count; i++)
         {
             if(pickup == spawned[i])
             {
                 Debug.Log("Removed");
-                spawned.Remove(pickup);
+                spawned.Remove(spawned[i]);
             }
         }
         Debug.Log("Object Count after Remove: " + spawned.Count);
-
     }
+
+
 }

@@ -20,23 +20,16 @@ public class SpeedPad : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //Prefabs can't reference scene objects.  
-
             speedBoost = playerScript.physicsSpeed * 2;
             player.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, speedBoost), ForceMode.Impulse);
 
-            Debug.Log("Boost:" + speedBoost);
-            //SpeedBoost();
+            StatusChange.effectName = "Boosted";
+            StartCoroutine(PauseForStatus());
         }
     }
-
-    /*
-    void SpeedBoost()
+    IEnumerator PauseForStatus()
     {
-            speedBoost = playerScript.physicsSpeed * 2;
-            player.GetComponent<Rigidbody>().AddForce(new Vector3(0, 0, speedBoost), ForceMode.Impulse);
-
-            Debug.Log("Boost:" + speedBoost);
+        yield return new WaitForSeconds(3f);
+        StatusChange.effectName = "Normal";
     }
-     */
 }

@@ -6,6 +6,7 @@ public class CubeController : MonoBehaviour
 {
     private CubeEffects cubeEffect;
     private PickupSpawner spawner;
+    public GameObject cube;
 
     void Start()
     {
@@ -23,9 +24,10 @@ public class CubeController : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             cubeEffect.CubeCollectEffect();
-            Debug.Log("Call To Remove");
-            //spawner.RemoveObject(gameObject);
-            Destroy(gameObject);
+            CoinScore.coinScore -= 1;
+            //Debug.Log("Call To Remove");
+            //spawner.RemoveObject(cube);
+            Destroy(cube);
         }
     }
 }

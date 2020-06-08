@@ -32,7 +32,7 @@ public class PlayerDeathMain : MonoBehaviour
     {
         effects.PlayerDeathEffect();
         AudioManagerMain.instance.Play("PlayerDeath");
-        player.SetActive(false);
+        player.SetActive(false);  //Do I need to destroy the player?
         GameOverMenu.isDead = true;
     }
 }

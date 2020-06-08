@@ -4765,7 +4765,7 @@ GameObject:
   - component: {fileID: 4229560053610809595}
   m_Layer: 0
   m_Name: Coin
-  m_TagString: Untagged
+  m_TagString: Collected
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4799,7 +4799,7 @@ GameObject:
   - component: {fileID: 4229560053718601035}
   - component: {fileID: 4229560053718601047}
   - component: {fileID: 2308259477532560488}
-  - component: {fileID: 2150143744241654517}
+  - component: {fileID: 8988847004874003718}
   m_Layer: 0
   m_Name: CoinPickup
   m_TagString: Coin
@@ -4897,6 +4897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 4229560053718601034}
   coinFX: {fileID: 0}
+  collectObject: {fileID: 4229560053610809594}
 --- !u!114 &2308259477532560488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4912,7 +4913,7 @@ MonoBehaviour:
   coinGlitter: {fileID: 198858562690846188, guid: 968c924d2be019d4b9e67647551eec3e,
     type: 3}
   coin: {fileID: 4229560053718601034}
---- !u!114 &2150143744241654517
+--- !u!114 &8988847004874003718
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4921,7 +4922,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4229560053718601034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f0b2e9f50dae0549a2c9c4b244fc0d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 51542f32c5beb6d4a83d125accf3f80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinObject: {fileID: 4229560053610809594}
+  deadObject: {fileID: 4229560053610809594}
+  tagName: Coin

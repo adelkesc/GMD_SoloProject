@@ -15,7 +15,6 @@ public class CoinDestroy : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
-
         coinCollider = GetComponent<Collider>();
     }
 
