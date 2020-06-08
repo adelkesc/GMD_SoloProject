@@ -12,6 +12,7 @@ TagManager:
   - Wall
   - FxTemporaire
   - Collected
+  - Killzone
   layers:
   - Default
   - TransparentFX

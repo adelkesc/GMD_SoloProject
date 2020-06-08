@@ -24,11 +24,19 @@ public class PlayerDeathMain : MonoBehaviour
         currentPosition = player.transform.position.y;
         if (currentPosition <= deathZone)
         {
-            FallDeath();
+            PlayerDeath();
         }
     }
 
-    void FallDeath()
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Killzone"))
+        {
+            PlayerDeath();
+        }
+    }
+
+    public void PlayerDeath()
     {
         effects.PlayerDeathEffect();
         AudioManagerMain.instance.Play("PlayerDeath");

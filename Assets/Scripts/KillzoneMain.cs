@@ -7,35 +7,52 @@ public class KillzoneMain : MonoBehaviour
     public GameObject killBoundary;
     public float moveSpeed;
 
-    private GameObject player;
+    private PickupSpawner destroyObj;
+    private bool isPaused;
+
+    //public string[] tags = {"Cube", "Coin"}; //How to make this editable in the inspector?
+
+    //private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
+        destroyObj = GameObject.FindObjectOfType<PickupSpawner>();
 
+        StartCoroutine(PauseForPlayer());
+        isPaused = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(PauseForPlayer());
         //The plane is rotated so it uses the Y axis to move in the Z axis.
-        killBoundary.transform.Translate(new Vector3(0, moveSpeed, 0) * Time.deltaTime);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        if(!isPaused)
         {
-            Debug.Log("The player will die here!");
-            //Trigger player death, killzone stops moving
-            //player.SetActive(false);
-            moveSpeed = 0;
+            killBoundary.transform.Translate(new Vector3(0, moveSpeed, 0) * Time.deltaTime);
         }
     }
+    
+    /*
+    private void OnTriggerEnter(Collider other)
+    {
+        //It works without the for and the if but destroys absolutely every object it touches.
+        for(int i = 0; i < tags.Length; i++)
+        {
+            if(other.gameObject.tag == tags[i])
+            {
+                destroyObj.KillzoneDestroy(other.gameObject);
+            }
+        }
+
+    }
+    */
+
     IEnumerator PauseForPlayer()
     {
-        yield return new WaitForSeconds(50f);
+        yield return new WaitForSeconds(5f);
+        isPaused = false;
+
     }
 }

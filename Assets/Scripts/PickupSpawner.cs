@@ -95,6 +95,10 @@ public class PickupSpawner : MonoBehaviour
         }
         Debug.Log("Object Count after Remove: " + spawned.Count);
     }
-
+    public void KillzoneDestroy(GameObject obj)
+    {
+        Destroy(obj);
+        Debug.Log("Object Destroyed!");
+    }
 
 }
