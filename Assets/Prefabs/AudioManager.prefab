@@ -46,6 +46,26 @@ MonoBehaviour:
   sounds:
   - name: BackgroundMusic
     clip: {fileID: 8300000, guid: 07f391589664f4e85904fa28802b4aa8, type: 3}
-    volume: 0.5
+    volume: 0.4
     loop: 1
+    source: {fileID: 0}
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: 71b3052dd7092ad4ba4318289fcf639e, type: 3}
+    volume: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: CoinCollected
+    clip: {fileID: 8300000, guid: a932d32fca391cd48b4a00bba29315cd, type: 3}
+    volume: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: CubeCollected
+    clip: {fileID: 8300000, guid: 78422d11e78d9124da7276f11ddc5330, type: 3}
+    volume: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: PatrolHit
+    clip: {fileID: 8300000, guid: e59887f080f9370459c543b934c39839, type: 3}
+    volume: 0.7
+    loop: 0
     source: {fileID: 0}

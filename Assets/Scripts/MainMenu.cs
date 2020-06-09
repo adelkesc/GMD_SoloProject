@@ -7,13 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        //Debug.Log("Play Game");
         StartCoroutine(StartGameAsync());
     }
     public void ExitGame()
     {
-        Debug.Log("Quit Game");
-        //Application.Quit();
+        Application.Quit();
     }
     IEnumerator StartGameAsync()
     {

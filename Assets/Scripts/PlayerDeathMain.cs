@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerDeathMain : MonoBehaviour
 {
@@ -27,7 +25,6 @@ public class PlayerDeathMain : MonoBehaviour
             PlayerDeath();
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Killzone"))
@@ -35,7 +32,6 @@ public class PlayerDeathMain : MonoBehaviour
             PlayerDeath();
         }
     }
-
     public void PlayerDeath()
     {
         effects.PlayerDeathEffect();
