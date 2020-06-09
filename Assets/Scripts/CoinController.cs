@@ -6,7 +6,7 @@ public class CoinController : MonoBehaviour
 {
     public GameObject coin;
     public CoinEffects coinFX;
-    public GameObject collectObject; //Problems with this
+    public GameObject collectObject;
 
     private void Awake()
     {

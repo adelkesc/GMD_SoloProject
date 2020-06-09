@@ -31,11 +31,10 @@ public class ObjectCleanupTest : MonoBehaviour
             planes = GeometryUtility.CalculateFrustumPlanes(cam);
             if (GeometryUtility.TestPlanesAABB(planes, objCollider.bounds))
             {
-                Debug.Log("Object Detected for Cleanup! " + deadObject.name);
+                //do nothing
             }
             else
             {
-                Debug.Log("Nothing Detected, Cleanup!");
                 Destroy(deadObject);
 
             }

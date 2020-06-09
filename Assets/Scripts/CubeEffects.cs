@@ -5,12 +5,10 @@ using UnityEngine;
 public class CubeEffects : MonoBehaviour
 {
     public ParticleSystem collectParticle;
-    public GameObject cube;
 
-    public void CubeCollectEffect()
+    public void CubeCollectEffect(GameObject obj)
     {
-        //Instantiate(collectParticle, cube.transform.position, Quaternion.Euler(90, 0, 0));
-        //why does the particle effect instantiate on a random prefab instead of where the OnTrigger occured?
+        Instantiate(collectParticle, obj.transform.position, Quaternion.Euler(90, 0, 0));
         AudioManagerMain.instance.Play("CubeCollected");
     }
 }

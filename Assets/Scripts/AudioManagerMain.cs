@@ -26,6 +26,7 @@ public class AudioManagerMain : MonoBehaviour
 
         foreach (SoundMain singleSound in sounds)
         { 
+            //exposes the attribute
             singleSound.source = gameObject.AddComponent<AudioSource>();
             singleSound.source.clip = singleSound.clip;
             singleSound.source.volume = singleSound.volume;
@@ -34,6 +35,7 @@ public class AudioManagerMain : MonoBehaviour
     }
     public void Play(string name)
     {
+        //Goes through the array of SoundMain and finds them by name.
         SoundMain s = Array.Find(sounds, sound => sound.name == name);
         if(s == null)
         {
@@ -45,6 +47,7 @@ public class AudioManagerMain : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Background music plays from Game Object.
         Play("BackgroundMusic");
     }
 }

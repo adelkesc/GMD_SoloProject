@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8696447688929562674}
   m_Layer: 8
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Collected2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectParticle: {fileID: 198681264470032530, guid: aa8d6482d70a23445b4b2a928ed1b845,
     type: 3}
-  cube: {fileID: 8916824776164976469}
 --- !u!114 &6782286748101871006
 MonoBehaviour:
   m_ObjectHideFlags: 0

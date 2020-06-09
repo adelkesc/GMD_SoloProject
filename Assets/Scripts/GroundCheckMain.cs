@@ -12,7 +12,7 @@ public class GroundCheckMain : MonoBehaviour
     private Camera mainCam;
     Plane[] planes;
 
-    public bool groundRecycled; //used to be private
+    private bool groundRecycled; 
 
     private void Start()
     {
@@ -37,7 +37,6 @@ public class GroundCheckMain : MonoBehaviour
         else if(!groundRecycled)
         {
             Debug.Log("Ground Not Detected:" + groundObject.name);
-            Debug.Log("Method call to zoffset recycle ground.");
             groundController.RecycleGround(this.gameObject);
             groundRecycled = true;
 

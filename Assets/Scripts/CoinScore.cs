@@ -16,8 +16,5 @@ public class CoinScore : MonoBehaviour
     void Update()
     {
         collectedText.text = "Coins: " + coinScore.ToString();
-        /*set an alert in the coin's script to detect when the coin has 
-         * been collected so the score will be added here.
-         */
     }
 }

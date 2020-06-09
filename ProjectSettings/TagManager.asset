@@ -13,6 +13,7 @@ TagManager:
   - FxTemporaire
   - Collected
   - Killzone
+  - Collected2
   layers:
   - Default
   - TransparentFX

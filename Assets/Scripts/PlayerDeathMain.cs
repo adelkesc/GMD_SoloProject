@@ -2,7 +2,6 @@
 
 public class PlayerDeathMain : MonoBehaviour
 {
-    //private PlayerMovementMain playerScript;  //Try using this variable in place of player
     private PlayerEffects effects;
 
     private float deathZone;
@@ -15,8 +14,6 @@ public class PlayerDeathMain : MonoBehaviour
         deathZone = transform.position.y - 5;
         effects = GameObject.FindObjectOfType<PlayerEffects>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         currentPosition = player.transform.position.y;
@@ -36,7 +33,7 @@ public class PlayerDeathMain : MonoBehaviour
     {
         effects.PlayerDeathEffect();
         AudioManagerMain.instance.Play("PlayerDeath");
-        player.SetActive(false);  //Do I need to destroy the player?
+        player.SetActive(false);  //Destroying player gives reference errors, unnecessary anyway
         GameOverMenu.isDead = true;
     }
 }

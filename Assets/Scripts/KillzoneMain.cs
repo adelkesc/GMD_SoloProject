@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class KillzoneMain : MonoBehaviour
@@ -7,24 +6,17 @@ public class KillzoneMain : MonoBehaviour
     public GameObject killBoundary;
     public float moveSpeed;
 
-    private PickupSpawner destroyObj;
     private bool isPaused;
 
-    //public string[] tags = {"Cube", "Coin"}; //How to make this editable in the inspector?
-
-    //private GameObject player;
+    //public List<string> tags = new List<string>() { "Cube", "Coin", "Collected" };;
+    //public List<GameObject> toDestroy = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        //player = GameObject.FindGameObjectWithTag("Player");
-        destroyObj = GameObject.FindObjectOfType<PickupSpawner>();
-
         StartCoroutine(PauseForPlayer());
         isPaused = true;
     }
-
-    // Update is called once per frame
     void Update()
     {
         //The plane is rotated so it uses the Y axis to move in the Z axis.
@@ -33,26 +25,31 @@ public class KillzoneMain : MonoBehaviour
             killBoundary.transform.Translate(new Vector3(0, moveSpeed, 0) * Time.deltaTime);
         }
     }
-    
+    IEnumerator PauseForPlayer()
+    {
+        yield return new WaitForSeconds(5f);
+        isPaused = false;
+    }
+
     /*
     private void OnTriggerEnter(Collider other)
     {
-        //It works without the for and the if but destroys absolutely every object it touches.
-        for(int i = 0; i < tags.Length; i++)
+        //For some reason other.gameObject.tag will never return the same "tag" as toDestroy[i].tag
+        //It must be toDestroy[i].name, be careful.
+        for (int i = 0; i < toDestroy.Count; i++) //tags.count
         {
-            if(other.gameObject.tag == tags[i])
+            if (other.gameObject.tag == toDestroy[i].name)
             {
-                destroyObj.KillzoneDestroy(other.gameObject);
+                destroyObj.KillzoneDestroy(toDestroy[i]);
+                //only detects objects with colliders.  the empty gameobjects don't have colliders, only tags
+                //try making an list of gameobjects and adding them in the inspector
+            }
+            else
+            {
+                Debug.Log("ObjectNothing");
             }
         }
 
     }
     */
-
-    IEnumerator PauseForPlayer()
-    {
-        yield return new WaitForSeconds(5f);
-        isPaused = false;
-
-    }
 }

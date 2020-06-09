@@ -5,18 +5,18 @@ using UnityEngine;
 public class CoinEffects : MonoBehaviour
 {
     public ParticleSystem coinGlitter;
-    ParticleSystem coinParticle;
+    //ParticleSystem coinParticle;
     public GameObject coin;
 
     void Start()
     {
-        coinParticle = GetComponentInChildren<ParticleSystem>();
+        //coinParticle = GetComponentInChildren<ParticleSystem>();
         Instantiate(coinGlitter, coin.transform.position, Quaternion.identity, transform.parent);
     }
 
     public void OnCoinCollect()
     {
-        coinParticle.Play();
+        //coinParticle.Play(); disabled for now
         AudioManagerMain.instance.Play("CoinCollected");
     }
 }
