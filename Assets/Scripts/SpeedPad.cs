@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpeedPad : MonoBehaviour
 {
-    public float speedBoost;  //make this private as well
+    private float speedBoost;  //make this private as well
     private PlayerMovementMain playerScript;
-    public GameObject player; //make this private
+    private GameObject player; //make this private
 
     // Start is called before the first frame update
     void Start()
