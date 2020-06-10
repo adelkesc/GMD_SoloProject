@@ -4,6 +4,16 @@ A course assignment for a game development class.
 ## Youtube Link to Video Presentation
 https://youtu.be/fGjADx3uIQc
 
+00:00 - Input<br>
+00:46 - Vectors<br>
+01:38 - Physics<br>
+02:33 - Graphics<br>
+04:07 - Audio<br>
+04:42 - Animation<br>
+05:08 - User Interface<br>
+06:18 - Intermediate Scripting<br>
+07:40 - Game Architecture<br>
+
 ## Sources and Tutorials Used
 Roll-a-Ball Player Movement: https://www.youtube.com/watch?v=7C7WWxUxPZE<br>
 Roll-a-Ball Camera Movement: https://www.youtube.com/watch?v=Xcm5H2J95iI<br>
