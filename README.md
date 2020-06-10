@@ -1,6 +1,9 @@
 # GMD_SoloProject
 A course assignment for a game development class.
 
+## Youtube Link to Video Presentation
+...
+
 ## Sources and Tutorials Used
 Roll-a-Ball Player Movement: https://www.youtube.com/watch?v=7C7WWxUxPZE<br>
 Roll-a-Ball Camera Movement: https://www.youtube.com/watch?v=Xcm5H2J95iI<br>
@@ -26,4 +29,18 @@ Cartoon FX Free by Jean Moreno (JMO)<br>
 Starfield Skybox by Pulsar Bytes<br>
 Free Music Tracks For Games by Rizwan Ashraf<br>
 Sound FX - Retro Pack by Zero Rare (Levi Moore)<br>
-Effect Textures and Prefabs by Magicpot Inc.
+Effect Textures and Prefabs by Magicpot Inc.<br>
+<br>
+
+## How to Play Game
+Movement = Arrow keys or WASD<br>
+Jump = Space<br>
+Pause = P<br>
+<br>
+Coins are good, Cubes are bad.<br>
+The patrolling Cubes do not like to be touched.<br>
+Run over the green pads on the ground for a Boost.<br>
+You can jump over the Walls but it might be a waste of time.<br>
+Try not to fall off the platform.<br>
+<br>
+Remember that the name of the game is to keep moving forward.  Backwards is Death.
